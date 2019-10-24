@@ -26,9 +26,9 @@ const ControlBar = (props) => {
     inlineOnly,
     hideFullScreenControl
   } = props
-
+  const marginBottom = fullscreen ? 20 : 0;
   return (
-    <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.75)']} style={styles.container}>
+    <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.75)']} style={[styles.container, { marginBottom }]}>
       <Time time={currentTime} theme={theme.seconds} />
       <Scrubber
         onSeek={pos => onSeek(pos)}
